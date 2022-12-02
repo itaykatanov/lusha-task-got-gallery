@@ -1,4 +1,4 @@
-# Game Of Thrones Cards Gallery App
+# Game Of Thrones Cards Gallery App - Itay Katanov
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with typescript template.
 
@@ -6,6 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Assumptions
 * The API responses quickly with a handful of items so no pagination is needed.
 * Items from API are unique and do not need to be filtered or validated.
+
+## Tests
+I added unit test for component testing:
+* Button - check that it is enables/disabled.
+* Card - check that it renders the correct name.
 
 ## Available Scripts
 
