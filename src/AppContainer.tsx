@@ -6,11 +6,36 @@ import {Character} from "./types";
 import {Card} from "./components/Card";
 import styled from "@emotion/styled";
 import {Button} from "./components/Button";
+import {SECONDARY_COLOR} from "./const";
 
 
 const IMAGE_INTERVAL = 4;
 
-const StyledContainer = styled.div`
+const StyledHeader = styled.header`
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 0 4rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 20%);
+  
+  #header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${SECONDARY_COLOR};
+  }
+  
+  #header-logo {
+    width: 10rem;
+  }
+`;
+
+const StyledBody = styled.div`
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -61,15 +86,19 @@ export const AppContainer= () => {
     return (
         <>
             <Loader logoSrc={LushaLogo} hide={!loading}/>
-            <a href="https://www.lusha.com/" target="_blank" >
-                <img style={{margin: "20px"}} src="https://www.lusha.com/wp-content/uploads/2020/06/logo.svg" alt="Lusha Logo"/>
-            </a>
-            <StyledContainer>
+            <StyledHeader>
+                <div id="header-overlay">
+                    <a href="https://www.lusha.com/" target="_blank" >
+                        <img id="header-logo" style={{margin: "20px"}} src="https://www.lusha.com/wp-content/uploads/2020/06/logo.svg" alt="Lusha Logo"/>
+                    </a>
+                </div>
+            </StyledHeader>
+            <StyledBody>
                 <StyledCardsContainer>
                     {imageArray}
                 </StyledCardsContainer>
                 <Button text={"Load more"} disabled={counter > imagesList.length} onClick={() => setCounter(counter + IMAGE_INTERVAL)}/>
-            </StyledContainer>
+            </StyledBody>
         </>
 
     )

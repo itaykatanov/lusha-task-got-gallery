@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   border-radius: 6px;
   background-color: ${SECONDARY_COLOR};
   font-weight: bold;
+  font-size: 20px;
   color: ${BLACK_COLOR};
   border-color: #282c34;
   cursor: pointer;
