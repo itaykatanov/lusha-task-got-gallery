@@ -66,7 +66,7 @@ export const Card = (props: CardProps) => {
         <StyledCard>
             <StyledIconImageWrapper>
                 <StyledIcon>
-                    <InfoIcon dataTipId={`${props.name}, ${props.title}. \n House: ${props.house}`}/>
+                    <InfoIcon dataTipId={`${props.name}, ${props.title}. <br/> House: ${props.house}`}/>
                 </StyledIcon>
                 <StyledImageWrapper>
                     <StyledImage src={props.imageSrc} alt={props.name} />

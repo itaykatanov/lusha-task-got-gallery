@@ -31,7 +31,7 @@ export const InfoIcon = (props: InfoIconProps) => {
                 <path d="M12 16L12 12"></path>
                 <path d="M12 8L12.01 8"></path>
             </svg>
-            <ReactTooltip border={true} borderColor={WHITE_COLOR} backgroundColor={PRIMARY_COLOR}  type={"info"} effect={"float"} place={"bottom"}/>
+            <ReactTooltip border={true} borderColor={WHITE_COLOR} backgroundColor={PRIMARY_COLOR}  type={"info"} place={"bottom"} html={true}/>
         </StyledInfoIcon>
     );
 }
