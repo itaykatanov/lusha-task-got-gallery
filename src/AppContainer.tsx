@@ -7,6 +7,7 @@ import {Card} from "./components/Card";
 import styled from "@emotion/styled";
 import {Button} from "./components/Button";
 import {SECONDARY_COLOR} from "./const";
+import {useGetImages} from "./hooks/useGetImages";
 
 
 const IMAGE_INTERVAL = 4;
@@ -57,22 +58,8 @@ const StyledCardsContainer = styled.div`
 `;
 
 export const AppContainer= () => {
-    const [loading, setLoading] = useState(true);
-    const [imagesList, setImagesList] = useState<Character[]>([]);
+    const { loading, error, imagesList } = useGetImages();
     const [counter, setCounter] = useState(IMAGE_INTERVAL);
-
-    useEffect(() => {
-        let isCancelled = false;
-        getImagesFromApi().then((data) => {
-            if (!isCancelled){
-                setImagesList(data);
-                setLoading(false);
-            }
-        })
-        return () => {
-            isCancelled = true;
-        }
-    },[]);
 
     const imageArray = imagesList.slice(0, counter).map((character) =>
         <Card key={character.id}
@@ -82,6 +69,10 @@ export const AppContainer= () => {
               house={character.family}
         />
     );
+    
+    if (error){
+        return <div>Error....</div>
+    }
 
     return (
         <>
