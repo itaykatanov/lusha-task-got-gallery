@@ -69,7 +69,7 @@ export const AppContainer= () => {
               house={character.family}
         />
     );
-    
+
     if (error){
         return <div>Error....</div>
     }
