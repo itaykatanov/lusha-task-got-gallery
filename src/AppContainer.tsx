@@ -71,6 +71,7 @@ export const AppContainer= () => {
     );
 
     if (error){
+      //TODO: return error page
         return <div>Error....</div>
     }
 
